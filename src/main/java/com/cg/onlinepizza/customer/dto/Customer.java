@@ -1,16 +1,41 @@
 package com.cg.onlinepizza.customer.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Customer {
+	@Id
+	@Column
 	private int customerId;
+	@Column
 	private String customerName;
+	@Column
 	private Long customerMobile;
+	@Column
 	private String customerEmail;
+	@Column
 	private String customerAddress;
+	@Column
 	private String userName;
+	@Column
 	private String password;
 
 	public int getCustomerId() {
 		return customerId;
+	}
+	public Customer(String customerName, long customerMobile, String customerEmail,
+			String customerAddress, String userName, String password) {
+		super();
+		this.customerName = customerName;
+		this.customerMobile = customerMobile;
+		this.customerEmail = customerEmail;
+		this.customerAddress = customerAddress;
+		this.userName = userName;
+		this.password = password;
 	}
 
 	public void setCustomerId(int customerId) {
