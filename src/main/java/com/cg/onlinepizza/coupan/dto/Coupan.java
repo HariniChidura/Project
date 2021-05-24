@@ -1,11 +1,38 @@
 package com.cg.onlinepizza.coupan.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Coupan {
+	@Id
+	@GeneratedValue
+	@Column
 	private int coupanId;
+	@Column
 	private String coupanName;
+	@Column
 	private String coupanType;
+	@Column
 	private String coupanDescription;
+	@Column
 	private int coupanPizzaId;
+    public Coupan() {
+		
+	}
+	
+
+	public Coupan(int coupanId, String coupanName, String coupanType, String coupanDescription, int coupanPizzaId) {
+		super();
+		this.coupanId = coupanId;
+		this.coupanName = coupanName;
+		this.coupanType = coupanType;
+		this.coupanDescription = coupanDescription;
+		this.coupanPizzaId = coupanPizzaId;
+	}
+
 
 	public int getCoupanId() {
 		return coupanId;
